@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block title %}
+    PDF Search
+{% endblock %}
+{% block content %}
+    <body>
+          <div class="container" style="display:flex;align-items:center;justify-content:center;margin-top:5%">
+              <form method = "post" class="form-inline" >
+                   {{ form.hidden_tag() }}
+                  <div class="form-group mb-2">
+                      {{ form.pdfname.label }}
+                  </div>
+                  <div class="form-group mx-sm-3 mb-2">
+                       {{form.pdfname}}
+                       {{form.submit(class="btn btn-primary mb-2")}}
+                  </div>
+              </form>
+          </div>
+          <div class="container" style="display:flex;align-items:center;justify-content:center">
+              <table class="table table-hover table-dark">
+                <thead>
+                    <tr>
+                <!-- Your Columns HERE -->
+                        <th scope="col">PDF Name</th>
+                        <th scope="col">PDF Link</th>
+                        <th scope="col">Uploaded Date</th>
+                    </tr>
+                </thead>
+                        <tbody>
+            <!-- Your rows inside the table HERE: -->
+                                <tr>
+                                    <td>{{data.pdfname}}</td>
+                                    <td><a href="{{url_for('download',filename=data.pdfname)}}">{{data.pdflocation}}</a></td>
+                                    <td>{{data.uploaded_on}}</td>
+                                </tr>
+                        </tbody>
+              </table>
+          </div>
+    </body>
+{% endblock %}

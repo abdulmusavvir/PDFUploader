@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{% block title %}
+    UserSummary
+{% endblock %}
+{% block content %}
+    <body>
+          <div class="container" style="display:flex;align-items:center;justify-content:center;margin-top:5%">
+              <table class="table table-hover table-dark">
+                    <thead>
+                        <tr>
+                    <!-- Your Columns HERE -->
+                            <th scope="col">Month</th>
+                            <th scope="col">Year</th>
+                            <th scope="col">Uploaded PDF Count Per Month</th>
+                        </tr>
+                    </thead>
+                            <tbody>
+                <!-- Your rows inside the table HERE: -->
+                            {% for d in data%}
+                                    <tr>
+                                        <td>{{d.MONTH}}</td>
+                                        <td>{{d.YEAR}}</td>
+                                        <td>{{d.count}}</td>
+                                    </tr>
+                            {% endfor %}
+                            </tbody>
+                  </table>
+          </div>
+    </body>
+{% endblock %}

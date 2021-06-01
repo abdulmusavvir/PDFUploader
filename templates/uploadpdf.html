@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+{% block title %}
+    Upload PDF Page
+{% endblock %}
+{% block content %}
+<!--        <div class="container">-->
+    <div class="container" style="display:flex;align-items:center;justify-content:center;margin-top:10%">
+              <form action = "uploadpdf" method = "POST" enctype = "multipart/form-data">
+                  <label>Please Select PDF File From Your System</label>
+                  <input type = "file" name = "file" class="form-control-file">
+                  <input type = "submit" value="Upload" class="btn btn-primary">
+                 </form>
+    </div>
+{% endblock%}

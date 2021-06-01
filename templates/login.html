@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block title %}
+    Login Page
+{% endblock %}
+{% block content %}
+    <body>
+      <div class="container">
+        <form method = "post" class="form-group" style=" color:white,display:flex;align-items:center;justify-content:center;margin-top:3%">
+            <h2>
+                <center> Please Validate Your Self</center>
+            </h2>
+            {{ form.hidden_tag() }}
+            {{ form.username.label }}
+            {{ form.username(class="form-control")}}
+            {{ form.password.label }}
+            {{ form.password(class="form-control")}}
+            <br>
+            {{ form.submit(class="btn btn-primary btn-block")}}
+        </form>
+      </div>
+    </body>
+{% endblock %}
